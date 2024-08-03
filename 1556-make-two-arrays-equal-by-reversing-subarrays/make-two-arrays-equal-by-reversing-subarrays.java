@@ -1,10 +1,14 @@
 class Solution {
     public boolean canBeEqual(int[] target, int[] arr) {
-        Arrays.sort(target);
-        Arrays.sort(arr);
-        if( Arrays.equals(arr,target)){
-            return true;
+        Map<Integer,Integer> map= new HashMap<>();
+        for(int i=0;i<target.length;i++){
+            map.put(target[i],map.getOrDefault(target[i],0)+1);
+            map.put(arr[i],map.getOrDefault(arr[i],0)-1);
         }
-        return false; 
+        for(int i:map.keySet()){
+            if(map.get(i)!=0) return false; 
+        }
+        return true;
     }
+
 }
