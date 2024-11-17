@@ -38,7 +38,9 @@ class GFG {
             System.out.println(ans);
             // printList(head);
             t--;
-        }
+        
+System.out.println("~");
+}
     }
 }
 
@@ -56,13 +58,11 @@ class GFG {
 class Solution {
     int getMiddle(Node head) {
         // Your code here.
-        Node slow= head; 
         Node fast= head;
-        
+        Node slow= head;
         while(fast!=null && fast.next!=null){
-            fast=fast.next.next;
+            fast= fast.next.next;
             slow=slow.next;
-            
         }
         return slow.data;
     }
